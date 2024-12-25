@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+/* Контейнер слайдера */
+.slider-container {
+  position: relative; /* Для розміщення кнопок «Prev» / «Next» */
+  width: 600px; /* Ширина слайдера */
+  margin: 50px auto; /* Вирівнювання по центру сторінки */
+  overflow: hidden; /* Прибирає прокрутку, якщо елемент вилазить за межі */
+  border: 2px solid #ccc; /* Невелика рамка */
+  border-radius: 5px; /* Заокруглені кути (необов'язково) */
+}
+
+/* Внутрішній контейнер для слайдів */
+.slider {
+  display: flex; /* Розташування слайдів один за одним */
+  transition: transform 0.5s ease; /* Анімація при переміщенні */
+}
+
+/* Окремий слайд */
+.slide {
+  min-width: 600px; /* Рівна ширина для кожного слайду */
+  box-sizing: border-box; /* Враховувати padding у ширину елемента */
+  padding: 20px;
+  text-align: center;
+  background: #fff; /* Білий фон кожного слайду */
+}
+
+/* Початково активний слайд (для зручності можна додати спецефекти) */
+.slide.active {
+  background: #f0f0f0;
+}
+
+/* Кнопки */
+.prev,
+.next {
+  position: absolute;
+  top: 50%; /* По центру по вертикалі */
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  opacity: 0.8; /* Трохи прозора, щоб не дуже впадала в око */
+  transition: opacity 0.3s;
+}
+
+/* Позиція для кнопок */
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+/* Ефекти при наведенні */
+.prev:hover,
+.next:hover {
+  opacity: 1;
+}
